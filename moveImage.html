@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Floating Image Animation</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        .move-image {
+            width: 150px;
+            animation: floatToBottomRight 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes floatToBottomRight {
+            0% {
+                transform: translate(0px, 0px);
+                /* Top-left (start) */
+            }
+
+            100% {
+                transform: translate(30px, 30px);
+                /* Bottom-right (end) */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <img src="https://happyaddons.com/wp-content/uploads/2019/08/06.-Float-any-widget-Happily-with-Happy-Addons-1024x641.png"
+        alt="Floating Image" class="move-image">
+
+</body>
+
+</html>
