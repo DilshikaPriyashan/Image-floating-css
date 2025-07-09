@@ -19,15 +19,25 @@
             animation: floatToBottomRight 3s ease-in-out infinite alternate;
         }
 
-        @keyframes floatToBottomRight {
+        @keyframes floatXY {
             0% {
-                transform: translate(0px, 0px);
-                /* Top-left (start) */
+                transform: translate(0px, 0px); /* Start position */
+            }
+
+            25% {
+                transform: translate(10px, 5px); /* Slight move right and down */
+            }
+
+            50% {
+                transform: translate(15px, -5px); /* More to the right, slightly up */
+            }
+
+            75% {
+                transform: translate(5px, 10px); /* Back a bit left, down more */
             }
 
             100% {
-                transform: translate(30px, 30px);
-                /* Bottom-right (end) */
+                transform: translate(0px, 0px); /* Return to original position */
             }
         }
     </style>
