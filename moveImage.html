@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Floating Image Animation</title>
+    <title>Move Left to Right Animation</title>
     <style>
         body {
             margin: 0;
@@ -14,30 +14,18 @@
             background-color: #f0f0f0;
         }
 
-        .move-image {
+        .move-left-right {
             width: 150px;
-            animation: floatToBottomRight 3s ease-in-out infinite alternate;
+            animation: moveLR 3s ease-in-out infinite alternate;
         }
 
-        @keyframes floatXY {
+        @keyframes moveLR {
             0% {
-                transform: translate(0px, 0px); /* Start position */
-            }
-
-            25% {
-                transform: translate(10px, 5px); /* Slight move right and down */
-            }
-
-            50% {
-                transform: translate(15px, -5px); /* More to the right, slightly up */
-            }
-
-            75% {
-                transform: translate(5px, 10px); /* Back a bit left, down more */
+                transform: translateX(0px);
             }
 
             100% {
-                transform: translate(0px, 0px); /* Return to original position */
+                transform: translateX(50px);
             }
         }
     </style>
@@ -46,7 +34,7 @@
 <body>
 
     <img src="https://happyaddons.com/wp-content/uploads/2019/08/06.-Float-any-widget-Happily-with-Happy-Addons-1024x641.png"
-        alt="Floating Image" class="move-image">
+        alt="Moving Image" class="move-left-right">
 
 </body>
 
