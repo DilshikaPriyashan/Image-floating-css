@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Move Left to Right Animation</title>
+    <title>Move Top to Bottom Animation</title>
     <style>
         body {
             margin: 0;
@@ -14,18 +14,18 @@
             background-color: #f0f0f0;
         }
 
-        .move-left-right {
+        .move-top-bottom {
             width: 150px;
-            animation: moveLR 3s ease-in-out infinite alternate;
+            animation: moveTB 3s ease-in-out infinite alternate;
         }
 
-        @keyframes moveLR {
+        @keyframes moveTB {
             0% {
-                transform: translateX(0px);
+                transform: translateY(0px);
             }
 
             100% {
-                transform: translateX(50px);
+                transform: translateY(50px);
             }
         }
     </style>
@@ -34,7 +34,7 @@
 <body>
 
     <img src="https://happyaddons.com/wp-content/uploads/2019/08/06.-Float-any-widget-Happily-with-Happy-Addons-1024x641.png"
-        alt="Moving Image" class="move-left-right">
+        alt="Moving Image" class="move-top-bottom">
 
 </body>
 
