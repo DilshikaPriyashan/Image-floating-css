@@ -1,60 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <title>Scroll-Based Left to Right</title>
-    <style>
-        body {
-            margin: 0;
-            background-color: #f0f0f0;
-            font-family: sans-serif;
-        }
+  <meta charset="UTF-8">
+  <title>Hero Section with Zoom-In Image</title>
+  <style>
+    /* body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    } */
 
-        .scroll-wrapper {
-            height: 200vh;
-            /* Make the page scrollable */
-            position: relative;
-        }
+    /* .hero {
+      height: 100vh;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    } */
 
-        .image-container {
-            position: sticky;
-            top: 40vh;
-            /* Keeps image in view during scroll */
-            height: 100px;
-            display: flex;
-            align-items: center;
-        }
+    .home-page-hero-image {
+      transform: translateY(-100px) scale(0.8);
+      animation: slideZoomIn 1.5s ease-out forwards;
+    }
 
-        .scroll-image {
-            width: 150px;
-            animation: moveOnScroll linear;
-            animation-timeline: scroll();
-            animation-range: entry 0% exit 100%;
-        }
-
-        @keyframes moveOnScroll {
-            0% {
-                transform: translateX(0%);
-            }
-
-            100% {
-                transform: translateX(200px);
-            }
-        }
-    </style>
+    @keyframes slideZoomIn {
+      0% {
+        transform: translateY(-100px) scale(0.8);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-    <div class="scroll-wrapper">
-        <div class="image-container">
-            <img class="scroll-image"
-                src="https://happyaddons.com/wp-content/uploads/2019/08/06.-Float-any-widget-Happily-with-Happy-Addons-1024x641.png"
-                alt="Scroll Moving Image">
-        </div>
-    </div>
+  <section class="hero">
+    <img src="https://happyaddons.com/wp-content/uploads/2019/08/06.-Float-any-widget-Happily-with-Happy-Addons-1024x641.png"
+         alt="Hero Image" class="home-page-hero-image">
+  </section>
 
 </body>
-
 </html>
