@@ -1,47 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Hero Section with Zoom-In Image</title>
-  <style>
-    /* body {
-      margin: 0;
-      padding: 0;
-      font-family: sans-serif;
-    } */
+    <meta charset="UTF-8">
+    <title>Floating Image Animation (Reversed)</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
 
-    /* .hero {
-      height: 100vh;
-      background-color: #f0f0f0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    } */
+        .float-to-top-left {
+            animation: floatToTopLeft 3s ease-in-out infinite alternate;
+        }
 
-    .home-page-hero-image {
-      transform: translateY(-100px) scale(0.8);
-      animation: slideZoomIn 1.5s ease-out forwards;
-    }
+        @keyframes floatToTopLeft {
+            0% {
+                transform: translate(30px, 30px);
+            }
 
-    @keyframes slideZoomIn {
-      0% {
-        transform: translateY(-100px) scale(0.8);
-        opacity: 0;
-      }
-      100% {
-        transform: translateY(0) scale(1);
-        opacity: 1;
-      }
-    }
-  </style>
+            100% {
+                transform: translate(0px, 0px);
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-  <section class="hero">
     <img src="https://happyaddons.com/wp-content/uploads/2019/08/06.-Float-any-widget-Happily-with-Happy-Addons-1024x641.png"
-         alt="Hero Image" class="home-page-hero-image">
-  </section>
+        alt="Floating Image" class="float-to-top-left">
 
 </body>
+
 </html>
