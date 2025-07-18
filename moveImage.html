@@ -3,28 +3,42 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Floating Image Animation (Reversed)</title>
+    <title>Scroll-Based Top to Bottom</title>
     <style>
         body {
             margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             background-color: #f0f0f0;
+            font-family: sans-serif;
         }
 
-        .float-to-top-left {
-            animation: floatToTopLeft 3s ease-in-out infinite alternate;
+        .scroll-wrapper {
+            height: 200vh; /* Make the page scrollable */
+            position: relative;
         }
 
-        @keyframes floatToTopLeft {
+        .image-container {
+            position: sticky;
+            top: 40vh; /* Keeps image in view during scroll */
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .scroll-image {
+            width: 150px;
+            animation: moveOnScroll linear;
+            animation-timeline: scroll();
+            animation-range: entry 0% exit 100%;
+        }
+
+        @keyframes moveOnScroll {
             0% {
-                transform: translate(30px, 30px);
+                transform: translateY(0%);
             }
 
             100% {
-                transform: translate(0px, 0px);
+                transform: translateY(200px);
             }
         }
     </style>
@@ -32,8 +46,13 @@
 
 <body>
 
-    <img src="https://happyaddons.com/wp-content/uploads/2019/08/06.-Float-any-widget-Happily-with-Happy-Addons-1024x641.png"
-        alt="Floating Image" class="float-to-top-left">
+    <div class="scroll-wrapper">
+        <div class="image-container">
+            <img class="scroll-image"
+                src="https://happyaddons.com/wp-content/uploads/2019/08/06.-Float-any-widget-Happily-with-Happy-Addons-1024x641.png"
+                alt="Scroll Moving Image">
+        </div>
+    </div>
 
 </body>
 
